@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int strlen_pirata(char*p){
+    int i;
+    for(i = 0;p[i] != '\0';i++){}
+    return i;
+}
+
+int main()
+{
+    int i,tam;
+    char nome[15];
+
+    printf("Nome: ");
+    scanf("%s",nome);
+    tam = strlen_pirata(nome);
+    printf("Seu nome tem %d letras.",tam);
+
+    return 0;
+}
