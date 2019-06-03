@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+void memcpy_pirata(char *d,char *f,int n){
+    int i;
+    for(i = 0;i < n;i++){
+        d[i] = f[i];
+    }
+    d[i] = '\0';
+}
+
+int main()
+{
+ char fonte[16];
+ char destino[20];
+ int tam;
+ printf("Digite seu nome:\n");
+ scanf("%s",fonte);
+ printf("Digite o numero de caracteres a serem copiados:\n");
+ scanf("%d",&tam);
+ memcpy_pirata(destino,fonte,tam);
+ printf("Valor em destino = %s.\n",destino);
+ return 0;
+}
