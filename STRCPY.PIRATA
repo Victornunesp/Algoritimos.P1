@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+void strcpy_pirata(char *d,char *f){
+    int i;
+    for(i = 0;f[i] != '\0';i++) d[i] = f[i];
+    d[i] = '\0';
+}
+
+
+int main()
+{
+    char fonte[10];
+    char destino[20];
+    printf("Digite seu nome:\n");
+    scanf("%s",fonte);
+    strcpy_pirata(destino,fonte);
+    printf("Valor em destino = %s.\n",destino);
+    return 0;
+
+
+}
