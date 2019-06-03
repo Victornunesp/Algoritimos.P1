@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+#include <locale.h>
+
+void memset_pirata(char *p,char *ascii,int n){
+    int i;
+    for(i = 0;i < n;i++) p[i] = ascii;
+    }
+
+int main()
+{
+ char fonte[10];
+ char destino[20];
+ setlocale(LC_ALL,"portuguese");
+ printf("Digite seu nome:\n");
+ scanf("%s",fonte);
+ strcpy(destino,fonte);
+ printf("Valor em destino antes da funcao memset = %s.\n",destino);
+ memset_pirata(destino+2,'*',3);
+ printf("Valor em destino depois da funcao memset= %s.\n",destino);
+ return 0;
+}
