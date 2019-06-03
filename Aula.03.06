@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    char nome[15];
+    int i;
+    printf("Digite seu primeiro nome:\n");
+    scanf("%s", nome);
+    nome[4] = '\0';
+    printf("Primeiro nome: %s\n",nome);
+
+
+    for(i = 0;i < 15;i++)
+        printf("nome[%d] = %d = %c\n",i,nome[i],nome[i]);
+
+    return 0;
+}
