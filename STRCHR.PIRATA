@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+
+char *strchr_pirata(char *p,char elemento){
+    int i;
+    for(i = 0;p[i] != '\0';i++){
+        if(p[i] == elemento) return &p[i];
+    }
+    return NULL; 
+}
+
+int main()
+{
+ char fonte[20];
+ char par = ')';
+ char *res;
+ printf("Digite tel, com ou sem DDD:");
+ scanf("%s",fonte);
+ res = strchr_pirata(fonte,par);
+ if(res == NULL) printf("Telefone: %s.\n",fonte);
+ else{
+  printf("Telefone: %s",res+1);
+ }
+ return 0;
+}
