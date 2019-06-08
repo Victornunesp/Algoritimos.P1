@@ -1,0 +1,17 @@
+#include <stdio.h>
+#include <string.h>
+int main()
+{
+ char fonte[] = {"Separado, por, virgula"};
+ char virg = ',';
+ char *res;
+ printf("%s:\n",fonte);
+ printf("procurando virgula...\n");
+ res = strrchr(fonte,virg);
+ if(res == NULL) printf("Virgula nao encontrada.\n");
+ else{
+  printf("Virgula encontrada no endereço %p.\n",res);
+  printf("O resto da string: %s",res);
+ }
+ return 0;
+}
