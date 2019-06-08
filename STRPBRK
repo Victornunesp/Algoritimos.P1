@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include <string.h>
+
+int main ()
+{
+   char str1[] = "Perto meio longe";
+   char str2[] = " ";
+   char *ator = str1;
+
+   while(ator != NULL){
+    printf("%s\n",ator);
+    ator = strpbrk(ator,str2);
+    if(ator != NULL) ator++;
+   }
+   return(0);
+}
