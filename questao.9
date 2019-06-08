@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <stdio.h>
+
+int main(){
+float n1,n2,med;
+int n_aprov = 0;
+int teste = 1;
+
+while(teste == 1){
+printf("Digite notas\n");
+scanf("%f%f",&n1,&n2);
+med = (n1+n2)/2;
+printf("Media = %g",med);
+
+printf("\nNovo calculo?");
+scanf("%d",&teste);
+if(med >= 7){
+    n_aprov++;
+}
+}
+printf("Numero de aprovados = %d",n_aprov);
+}
