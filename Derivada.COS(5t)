@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <math.h>
+
+float f(float t){
+    return cos(5*t);
+}
+
+int main ()
+{
+  float t0 = 0;
+  float t_max = 10;
+  float dt = .001;
+  float t;
+  float ft;
+  float df;
+  float i;
+  for(t = t0;t <= t_max;t+=dt){
+     ft = f(t);
+     df = (f(t+dt) - f(t))/dt;
+     printf("f(%g) = %g \ tf'(%g) = %g\n",t,ft,t,df);
+  }
+  return 0;
+}
