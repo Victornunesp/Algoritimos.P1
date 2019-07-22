@@ -1,0 +1,38 @@
+#include <stdio.h>
+
+float rpn_engine(char * rpn){
+	int pilha[50];
+	int topo = -1;
+	float a,b;
+	int i;
+	
+	for(i = 0;rpn[i] != '\0';i++){
+		if((rpn[i] >= '0') && (rpn[i] <= '9')){
+			pilha[++topo] = rpn[i] - '0';
+		}
+		else{
+			b = pilha[topo--];
+			a = pilha[topo--];
+			if(rpn[i] == '+' ) pilha[++topo] = a + b;
+			if(rpn[i] == '-' ) pilha[++topo] = a - b;
+			if(rpn[i] == '*' ) pilha[++topo] = a * b;
+			if(rpn[i] == '/' ) pilha[++topo] = a / b;
+		}
+	}
+	return pilha[topo];
+}
+
+
+int main()
+{
+	char rpn_exp[50];
+	float res;
+	
+	printf("Digite expressão RPN:");
+	scanf("%s",rpn_exp);
+	
+	res = rpn_engine(rpn_exp);
+	
+	printf("%s = %g",rpn_exp,res);
+	return 0;
+}
