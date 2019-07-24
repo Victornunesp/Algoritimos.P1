@@ -1,0 +1,45 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int cant(int topo,char pilha,char op){
+	if(topo == -1) return 0;
+	if(pilha == '+')||(pilha == '-')) return 0;
+	if(op == '+')||(op == '-')) return 1;
+	else return 0;
+}
+
+void infix2rpn(char *infix,char * rpn){
+	char op[50];
+	int topo_op = -1;
+	int topo_rpn = -1;
+	int i;
+	
+	for(i=0;infix[i]!='\0';i++){
+		if((infix[i]>= '0')&&(infix[i]<='9')){
+			rpn[++topo_rpn] = infix[i];
+		}
+		else{
+			while(cant(topo_op,infix[i],topo_rpn)){
+				rpn[++topo_rpn] = op[topo_op--];
+			}
+			op[++topo_op] = infix[i];
+		}
+	}
+	while(topo_op != -1){
+		rpn[++topo_rpn] = op[topo_op--];
+	}	
+	rpn[++topo_rpn] = '\0';
+	}
+
+int main(){
+	char infix[50];
+	char rpn[50];
+	
+	printf("Digite expressao");
+	scanf("%s",infix);
+	
+	infix2rpn(infix,rpn);
+	
+	printf("%s = %s",infix,rpn);
+	return 0;
+}
