@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <stdlib.h>
+int i;
+int k;
+int j;
+struct aluno{
+        char nome[20];
+        char sobre[20];
+        int idade;
+        float notas[4];
+    };
+
+void mostra_aluno(struct aluno eu){
+    printf("\nNome e Sobrenome: %s %s",eu.nome,eu.sobre);
+    printf("\nIdade:%d",eu.idade);
+    for(i=0;i<4;i++){
+        printf("\n%dº Nota:%g",i+1,eu.notas[i]);
+    }
+    return 0;
+}
+int main()
+{
+    struct aluno eu[4];
+    for(k=0;k<4;k++){
+        printf("NOME:\n");
+        scanf("%s",eu[k].nome);
+        printf("SOBRENOME:\n");
+        scanf("%s",eu[k].sobre);
+        printf("IDADE:\n");
+        scanf("%d",&eu[k].idade);
+        printf("NOTAS:\n");
+        for(j=0;j<4;j++){
+            scanf("%f",&eu[k].notas[j]);
+        }
+    }
+    for(k=0;k<4;k++) mostra_aluno(eu[k]);
+    return 0;
+}
